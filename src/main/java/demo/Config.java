@@ -46,7 +46,7 @@ import org.springframework.util.ReflectionUtils;
 
 @Configuration
 public class Config {
-    //@Bean
+    @Bean
     public AuthenticationManagerBuilderPostProcessor postprocessor() {
         return new AuthenticationManagerBuilderPostProcessor();
     }
@@ -58,13 +58,16 @@ public class Config {
     public Initializing init() {
         return new Initializing();
     }
-    //@Bean
+    @Bean
     public Ltw ltw() {
         return new Ltw();
     }
 }
 
 class Ltw implements LoadTimeWeaverAware, InitializingBean {
+    public Ltw() {
+        System.out.println("Ltw constructor");
+    }
     public void afterPropertiesSet() {
         System.out.println("init");
     }
