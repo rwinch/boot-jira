@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 @EnableAutoConfiguration
 @Configuration
 public class Application {
-    //@Autowired
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .inMemoryAuthentication()
