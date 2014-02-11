@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 
 @ComponentScan
 @EnableAutoConfiguration
-@Configuration
+@EnableGlobalAuthentication
 public class Application {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
